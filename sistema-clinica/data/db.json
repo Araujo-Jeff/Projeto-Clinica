@@ -1,0 +1,52 @@
+{
+  "pacientes": [
+    {
+      "id": "6b59",
+      "nome": "Jeff Lima",
+      "dataNascimento": "2010-02-09",
+      "cpf": "789456243112",
+      "contato": "99999999999",
+      "alergia": "Não",
+      "tipoSanguineo": "O+",
+      "convenio": "Unimed",
+      "endereco": {
+        "cep": "58066110",
+        "logradouro": "Rua das Oliveiras",
+        "numero": "787",
+        "complemento": "casa",
+        "bairro": "Muçumagro",
+        "cidade": "João Pessoa",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    }
+  ],
+  "medicos": [
+    {
+      "id": "064b",
+      "nome": "Dr. Ambrozio",
+      "crm": "1234",
+      "especialidade": "Endocrinologia",
+      "horario": "08:00 - 14:00 hrs",
+      "diasAtendimento": "Terça e Quinta"
+    },
+    {
+      "id": "90c0",
+      "nome": "Dr. Teste da Silva",
+      "crm": "1654",
+      "especialidade": "Neurologia",
+      "horario": "08:00 - 12:00 hrs",
+      "diasAtendimento": "Segunda e Quinta"
+    }
+  ],
+  "consultas": [
+    {
+      "id": "90b4",
+      "paciente": "Jeff",
+      "especialidade": "Cardiologia",
+      "medico": "Dr. Ambrozio",
+      "horario": "11:00",
+      "situacao": "Agendada"
+    }
+  ]
+}
