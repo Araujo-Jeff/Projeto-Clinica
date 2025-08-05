@@ -7,6 +7,7 @@ import Logo from '../assets/Logo_Clinica.png'
 
 const Inicial = () => {
     return (
+        // <div className='bg-secondary' style={{ minHeight: '100vh' }}>
         <Container className='mt-5'>
             <Form>
                 <Row className="justify-content-center" >
@@ -49,7 +50,9 @@ const Inicial = () => {
             </Form>
         </Container>
 
+        // </div>
     )
 }
+
 
 export default Inicial

@@ -58,6 +58,7 @@ const ConsultaList = () => {
                 </Button>
             </div>
 
+
             <Table striped bordered hover responsive>
 
                 <thead>

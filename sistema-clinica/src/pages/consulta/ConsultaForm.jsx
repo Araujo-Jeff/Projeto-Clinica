@@ -26,19 +26,19 @@ const ConsultaForm = () => {
         situacao: ''
     })
 
-    // useEffect(() => {
-    //     if (id) {
-    //         axios.get(`${apiUrl}/consultas/${id}`)
-    //             .then(response => {
-    //                 setConsulta({
-    //                     ...response.data,
-    //                     medicoId: response.data.medico ? response.data.medico.id : '',
-    //                     pacienteId: response.data.paciente ? response.data.paciente.id : ''
-    //                 })
-    //             })
-    //             .catch(error => console.error('Houve um erro ao carregar consulta: ', error))
-    //     }
-    // }, [id, apiUrl])
+    useEffect(() => {
+        if (id) {
+            axios.get(`${apiUrl}/consultas/${id}`)
+                .then(response => {
+                    setConsulta({
+                        ...response.data,
+                        medicoId: response.data.medico ? response.data.medico.id : '',
+                        pacienteId: response.data.paciente ? response.data.paciente.id : ''
+                    })
+                })
+                .catch(error => console.error('Houve um erro ao carregar consulta: ', error))
+        }
+    }, [id, apiUrl])
 
     useEffect(() => {
         axios.get(`${apiUrl}/consultas/${id}`)
@@ -46,17 +46,17 @@ const ConsultaForm = () => {
             .catch(error => console.error('Houve um erro ao carregar consulta: ', error))
     }, [apiUrl])
 
-    // useEffect(() => {
-    //     axios.get(`${apiUrl}/medicos`)
-    //         .then(response => setMedicos(response.data))
-    //         .catch(error => console.error('Houve um erro ao carregar Médico: ', error))
-    // }, [apiUrl])
+    useEffect(() => {
+        axios.get(`${apiUrl}/medicos`)
+            .then(response => setMedicos(response.data))
+            .catch(error => console.error('Houve um erro ao carregar Médico: ', error))
+    }, [apiUrl])
 
-    // useEffect(() => {  // esse
-    //     axios.get(`${apiUrl}/pacientes`)
-    //         .then(response => setPacientes(response.data))
-    //         .catch(error => console.error('Houve um erro ao carregar Paciente: ', error))
-    // }, [apiUrl])
+    useEffect(() => {  // esse
+        axios.get(`${apiUrl}/pacientes`)
+            .then(response => setPacientes(response.data))
+            .catch(error => console.error('Houve um erro ao carregar Paciente: ', error))
+    }, [apiUrl])
 
 
 
@@ -91,13 +91,13 @@ const ConsultaForm = () => {
 
                 <Form.Group className='mb-3'>
                     <Form.Label>Paciente</Form.Label>
-                    <Form.Control
+                    {/* <Form.Control
                         type='text'
                         required
                         value={consulta.paciente}
                         onChange={(e) => setConsulta({ ...consulta, paciente: e.target.value })}
-                    />
-                    {/* <Form.Select
+                    /> */}
+                    <Form.Select
                         className="form-control" //esse
                         id="paciente"
                         name="paciente"
@@ -112,7 +112,7 @@ const ConsultaForm = () => {
                             </option>
                         ))}
 
-                    </Form.Select> */}
+                    </Form.Select>
                 </Form.Group>
 
                 <Form.Group className='mb-3'>
@@ -143,13 +143,13 @@ const ConsultaForm = () => {
 
                 <Form.Group className='mb-3'>
                     <Form.Label>Médico</Form.Label>
-                    <Form.Control
+                    {/* <Form.Control
                         type='text'
                         required
                         value={consulta.medico}
                         onChange={(e) => setConsulta({ ...consulta, medico: e.target.value })}
-                    />
-                    {/* <Form.Select
+                    /> */}
+                    <Form.Select
                         className="form-control"
                         id="medico"
                         name="medico"
@@ -165,7 +165,7 @@ const ConsultaForm = () => {
                         ))}
 
 
-                    </Form.Select> */}
+                    </Form.Select>
                 </Form.Group>
 
                 <Row>
